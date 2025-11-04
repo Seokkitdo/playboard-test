@@ -19,10 +19,10 @@
   }
 </script>
 
-<div class="h-screen w-screen flex flex-col overflow-hidden">
-  <header class="h-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white flex items-center px-6 shadow-lg">
+<div class="h-screen w-screen flex flex-col overflow-hidden bg-slate-950">
+  <header class="h-16 bg-slate-900 border-b border-slate-800 text-white flex items-center px-6">
     <h1 class="text-2xl font-bold">Playboard</h1>
-    <span class="ml-4 text-sm opacity-90">스토리보드 관리 시스템</span>
+    <span class="ml-4 text-sm text-slate-400">스토리보드 관리 시스템</span>
   </header>
 
   <div class="flex-1 flex overflow-hidden">

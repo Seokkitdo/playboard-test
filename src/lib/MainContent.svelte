@@ -18,13 +18,13 @@
   }
 </script>
 
-<main class="flex-1 h-full overflow-y-auto bg-white p-6">
+<main class="flex-1 h-full overflow-y-auto bg-slate-950 p-6">
   {#if selectedModule && selectedScreen}
     <div class="mb-6">
-      <h1 class="text-2xl font-bold text-gray-800 mb-2">
+      <h1 class="text-2xl font-bold text-slate-100 mb-2">
         {selectedModule.name} - {selectedScreen.name}
       </h1>
-      <p class="text-sm text-gray-600">
+      <p class="text-sm text-slate-400">
         이 화면에서 사용되는 컴포넌트들을 확인할 수 있습니다.
       </p>
     </div>
@@ -51,10 +51,10 @@
             <SampleTable title={component.name} />
           {:else}
             <div
-              class="p-4 border border-gray-200 rounded-lg bg-gray-50 hover:bg-gray-100"
+              class="p-4 border border-slate-700 rounded-lg bg-slate-800 hover:bg-slate-700"
             >
-              <h3 class="font-semibold text-gray-800">{component.name}</h3>
-              <p class="text-sm text-gray-600 mt-2">
+              <h3 class="font-semibold text-slate-100">{component.name}</h3>
+              <p class="text-sm text-slate-400 mt-2">
                 {component.description || ''}
               </p>
             </div>
@@ -63,7 +63,7 @@
       {/each}
     </div>
   {:else}
-    <div class="flex items-center justify-center h-full text-gray-400">
+    <div class="flex items-center justify-center h-full text-slate-500">
       <div class="text-center">
         <svg
           class="w-24 h-24 mx-auto mb-4"
