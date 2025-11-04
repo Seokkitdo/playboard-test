@@ -1,4 +1,10 @@
 <script lang="ts">
+  interface Props {
+    class?: string
+  }
+
+  let { class: className = '' }: Props = $props()
+
   let sortSelectedText = $state<string>('최신순')
   let sortMenu = $state<HTMLElement | null>(null)
 
@@ -8,7 +14,7 @@
   }
 </script>
 
-<div class="bg-white p-6 rounded-lg shadow mt-6">
+<div class="bg-white p-6 rounded-lg shadow mt-6 {className}">
   <!-- Title with Button -->
   <div class="flex justify-between items-center mb-6">
     <h3 class="text-2xl font-bold text-gray-900">검사 현황</h3>

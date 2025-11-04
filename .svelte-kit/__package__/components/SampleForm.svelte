@@ -1,13 +1,14 @@
 <script lang="ts">
   interface Props {
     title: string;
+    class?: string;
   }
 
-  let { title }: Props = $props();
+  let { title, class: className = '' }: Props = $props();
 </script>
 
 <div
-  class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+  class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow {className}"
 >
   <h3 class="text-lg font-semibold text-gray-800 mb-4">{title}</h3>
   <form class="space-y-4">
