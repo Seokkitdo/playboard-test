@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Module, Screen } from '../types';
-  import { MODULES } from '../constants/modules';
+  import type { Module, Screen } from './types';
+  import { MODULES } from './constants/modules';
 
   interface Props {
     onScreenSelect: (module: Module, screen: Screen) => void;

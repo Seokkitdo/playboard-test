@@ -1,4 +1,4 @@
-import type { Module, Screen } from '../types';
+import type { Module, Screen } from './types';
 interface Props {
     onScreenSelect: (module: Module, screen: Screen) => void;
 }
