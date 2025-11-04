@@ -2,15 +2,13 @@
   "name": "@seokkitdo/playboard",
   "version": "0.0.3",
   "type": "module",
-  "main": "./dist/index.es.js",
-  "module": "./dist/index.es.js",
+  "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js"
-    },
-    "./styles": "./dist/style.css"
+      "svelte": "./dist/index.js"
+    }
   },
   "files": [
     "dist"
@@ -20,12 +18,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build:types",
-    "build:types": "tsc -p tsconfig.lib.json",
+    "build": "svelte-package -o dist",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
+    "@sveltejs/package": "^2.5.4",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "@tsconfig/svelte": "^5.0.5",
     "@types/node": "^24.6.0",
@@ -42,8 +40,8 @@
     "vite": "^7.1.7"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0",
-    "@mateothegreat/svelte5-router": "^2.16.0"
+    "@mateothegreat/svelte5-router": "^2.16.0",
+    "svelte": "^5.0.0"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16"

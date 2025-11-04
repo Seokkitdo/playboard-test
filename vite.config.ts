@@ -5,7 +5,15 @@ import { resolve } from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(), svelte()],
+  plugins: [
+    tailwindcss(),
+    svelte({
+      compilerOptions: {
+        dev: false
+      },
+      emitCss: true
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
@@ -19,10 +27,23 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`
     },
     rollupOptions: {
-      external: ['svelte', 'svelte/internal', '@mateothegreat/svelte5-router'],
+      external: [
+        'svelte',
+        'svelte/internal',
+        'svelte/store',
+        'svelte/motion',
+        'svelte/transition',
+        'svelte/animate',
+        'svelte/easing',
+        '@mateothegreat/svelte5-router'
+      ],
       output: {
         globals: {
           svelte: 'Svelte'
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'style.css'
+          return assetInfo.name || ''
         }
       }
     }
