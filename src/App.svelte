@@ -7,6 +7,7 @@
   let selectedModule = $state<Module | null>(null);
   let selectedScreen = $state<Screen | null>(null);
   let selectedComponent = $state<ComponentItem | null>(null);
+  let scrollToComponent = $state<string | null>(null);
 
   function handleScreenSelect(module: Module, screen: Screen) {
     selectedModule = module;
@@ -16,6 +17,14 @@
 
   function handleComponentSelect(component: ComponentItem) {
     selectedComponent = component;
+  }
+
+  function handleScrollToComponent(componentId: string) {
+    scrollToComponent = componentId;
+    // Reset after a brief delay to allow for future scrolls to the same component
+    setTimeout(() => {
+      scrollToComponent = null;
+    }, 100);
   }
 </script>
 
@@ -30,8 +39,13 @@
     <MainContent
       {selectedModule}
       {selectedScreen}
+      {scrollToComponent}
       onComponentSelect={handleComponentSelect}
     />
-    <RightSidebar {selectedScreen} {selectedComponent} />
+    <RightSidebar
+      {selectedScreen}
+      {selectedComponent}
+      onScrollToComponent={handleScrollToComponent}
+    />
   </div>
 </div>

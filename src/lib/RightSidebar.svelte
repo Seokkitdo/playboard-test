@@ -4,9 +4,10 @@
   interface Props {
     selectedScreen: Screen | null;
     selectedComponent: ComponentItem | null;
+    onScrollToComponent: (componentId: string) => void;
   }
 
-  let { selectedScreen, selectedComponent }: Props = $props();
+  let { selectedScreen, selectedComponent, onScrollToComponent }: Props = $props();
 
   function getComponentIcon(type: string) {
     switch (type) {
@@ -24,6 +25,10 @@
         return '📦';
     }
   }
+
+  function handleComponentClick(componentId: string) {
+    onScrollToComponent(componentId);
+  }
 </script>
 
 <aside class="h-full w-64 border-l border-slate-800 bg-slate-900 overflow-y-auto">
@@ -33,11 +38,12 @@
     {#if selectedScreen && selectedScreen.components.length > 0}
       <div class="space-y-2">
         {#each selectedScreen.components as component}
-          <div
-            class="p-3 rounded-lg border transition-all {selectedComponent?.id ===
+          <button
+            onclick={() => handleComponentClick(component.id)}
+            class="w-full p-3 rounded-lg border transition-all text-left {selectedComponent?.id ===
             component.id
-              ? 'border-sky-500 bg-slate-800'
-              : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'}"
+              ? 'border-sky-500 bg-slate-800 ring-2 ring-sky-500/50'
+              : 'border-slate-700 bg-slate-800/50 hover:border-slate-600 hover:bg-slate-800'}"
           >
             <div class="flex items-start gap-2">
               <span class="text-2xl">{getComponentIcon(component.type)}</span>
@@ -55,7 +61,7 @@
                 {/if}
               </div>
             </div>
-          </div>
+          </button>
         {/each}
       </div>
 

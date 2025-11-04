@@ -11,6 +11,7 @@ export const MODULES: Module[] = [
         components: [
           { id: 'c1', name: '센터 카드', type: 'card', description: '센터 정보를 표시하는 카드' },
           { id: 'c2', name: '센터 검색', type: 'form', description: '센터 검색 폼' },
+          { id: 'c5', name: '센터 테이블', type: 'table', description: '센터 목록을 표시하는 테이블' },
         ],
       },
       {
