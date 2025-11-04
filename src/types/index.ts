@@ -23,6 +23,6 @@ export interface Screen {
 export interface ComponentItem {
   id: string;
   name: string;
-  type: 'card' | 'button' | 'form' | 'table' | 'modal';
+  type: 'card' | 'button' | 'form' | 'table' | 'modal' | 'titleSearchFilter' | 'assessmentSessionCard';
   description?: string;
 }
