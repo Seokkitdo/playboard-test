@@ -3,6 +3,7 @@
   import LeftSidebar from './lib/LeftSidebar.svelte'
   import MainContent from './lib/MainContent.svelte'
   import RightSidebar from './lib/RightSidebar.svelte'
+  import SampleCard from './lib/components/SampleCard.svelte'
 
   let selectedModule = $state<Module | null>(null)
   let selectedScreen = $state<Screen | null>(null)
@@ -41,8 +42,13 @@
     <MainContent
       {selectedModule}
       {selectedScreen}
+      {scrollToComponent}
       onComponentSelect={handleComponentSelect}
     />
-    <RightSidebar {selectedScreen} {selectedComponent} />
+    <RightSidebar
+      {selectedScreen}
+      {selectedComponent}
+      onScrollToComponent={handleScrollToComponent}
+    />
   </div>
 </div>

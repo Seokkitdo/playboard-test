@@ -7,45 +7,11 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    svelte({
-      compilerOptions: {
-        dev: false
-      },
-      emitCss: true
-    })
+    svelte()
   ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
-    }
-  },
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/lib/index.ts'),
-      name: 'Playboard',
-      formats: ['es'],
-      fileName: (format) => `index.${format}.js`
-    },
-    rollupOptions: {
-      external: [
-        'svelte',
-        'svelte/internal',
-        'svelte/store',
-        'svelte/motion',
-        'svelte/transition',
-        'svelte/animate',
-        'svelte/easing',
-        '@mateothegreat/svelte5-router'
-      ],
-      output: {
-        globals: {
-          svelte: 'Svelte'
-        },
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'style.css'
-          return assetInfo.name || ''
-        }
-      }
     }
   },
   server: {

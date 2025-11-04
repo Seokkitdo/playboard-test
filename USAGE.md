@@ -49,18 +49,37 @@ npm install @seokkitdo/playboard@latest
   import { SampleButton, SampleCard } from '@seokkitdo/playboard'
 </script>
 
-<SampleButton>클릭</SampleButton>
-<SampleCard title="카드 제목">
-  카드 내용
-</SampleCard>
+<SampleButton label="클릭" />
+<SampleCard title="카드 제목" description="카드 설명" />
 ```
 
-### 스타일 import
+### 스타일 커스터마이징
 
-```javascript
-// main.ts 또는 App.svelte
-import '@seokkitdo/playboard/styles'
+모든 컴포넌트는 `class` prop을 통해 Tailwind CSS 클래스로 스타일을 커스터마이징할 수 있습니다:
+
+```svelte
+<script>
+  import { SampleButton, SampleCard } from '@seokkitdo/playboard'
+</script>
+
+<!-- 기본 스타일 -->
+<SampleButton label="기본 버튼" />
+
+<!-- 커스텀 스타일 -->
+<SampleButton
+  label="커스텀 버튼"
+  class="!bg-red-500 !hover:bg-red-600"
+/>
+
+<SampleCard
+  title="커스텀 카드"
+  class="!border-2 !border-blue-500"
+/>
 ```
+
+**주의사항:**
+- 프로젝트에 Tailwind CSS가 설치되어 있어야 합니다
+- `!` 접두사로 기본 스타일을 오버라이드할 수 있습니다
 
 ## 사용 가능한 컴포넌트
 

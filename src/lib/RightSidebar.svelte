@@ -1,37 +1,40 @@
 <script lang="ts">
-  import type { ComponentItem, Screen } from './types';
+  import type { ComponentItem, Screen } from './types'
 
   interface Props {
-    selectedScreen: Screen | null;
-    selectedComponent: ComponentItem | null;
-    onScrollToComponent: (componentId: string) => void;
+    selectedScreen: Screen | null
+    selectedComponent: ComponentItem | null
+    onScrollToComponent: (componentId: string) => void
   }
 
-  let { selectedScreen, selectedComponent, onScrollToComponent }: Props = $props();
+  let { selectedScreen, selectedComponent, onScrollToComponent }: Props =
+    $props()
 
   function getComponentIcon(type: string) {
     switch (type) {
       case 'card':
-        return '🃏';
+        return '🃏'
       case 'button':
-        return '🔘';
+        return '🔘'
       case 'form':
-        return '📝';
+        return '📝'
       case 'table':
-        return '📊';
+        return '📊'
       case 'modal':
-        return '🪟';
+        return '🪟'
       default:
-        return '📦';
+        return '📦'
     }
   }
 
   function handleComponentClick(componentId: string) {
-    onScrollToComponent(componentId);
+    onScrollToComponent(componentId)
   }
 </script>
 
-<aside class="h-full w-64 border-l border-slate-800 bg-slate-900 overflow-y-auto">
+<aside
+  class="h-full w-64 border-l border-slate-800 bg-slate-900 overflow-y-auto"
+>
   <div class="p-4">
     <h2 class="text-lg font-bold text-slate-100 mb-4">컴포넌트 목록</h2>
 
@@ -70,16 +73,20 @@
         <div class="space-y-1 text-sm text-slate-300">
           <p>총 컴포넌트: {selectedScreen.components.length}개</p>
           <p>
-            카드: {selectedScreen.components.filter((c) => c.type === 'card').length}개
+            카드: {selectedScreen.components.filter((c) => c.type === 'card')
+              .length}개
           </p>
           <p>
-            버튼: {selectedScreen.components.filter((c) => c.type === 'button').length}개
+            버튼: {selectedScreen.components.filter((c) => c.type === 'button')
+              .length}개
           </p>
           <p>
-            폼: {selectedScreen.components.filter((c) => c.type === 'form').length}개
+            폼: {selectedScreen.components.filter((c) => c.type === 'form')
+              .length}개
           </p>
           <p>
-            테이블: {selectedScreen.components.filter((c) => c.type === 'table').length}개
+            테이블: {selectedScreen.components.filter((c) => c.type === 'table')
+              .length}개
           </p>
         </div>
       </div>
