@@ -1,4 +1,4 @@
-import type { Module, Screen, ComponentItem } from '../types';
+import type { Module, Screen, ComponentItem } from './types';
 interface Props {
     selectedModule: Module | null;
     selectedScreen: Screen | null;

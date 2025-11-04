@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import type { Module, Screen, ComponentItem } from '../types'
+  import type { Module, Screen, ComponentItem } from './types'
   import SampleCard from './components/SampleCard.svelte'
   import SampleButton from './components/SampleButton.svelte'
   import SampleForm from './components/SampleForm.svelte'

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ComponentItem, Screen } from '../types';
+  import type { ComponentItem, Screen } from './types';
 
   interface Props {
     selectedScreen: Screen | null;

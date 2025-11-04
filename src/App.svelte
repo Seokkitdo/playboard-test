@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Module, Screen, ComponentItem } from './types'
+  import type { Module, Screen, ComponentItem } from './lib/types'
   import LeftSidebar from './lib/LeftSidebar.svelte'
   import MainContent from './lib/MainContent.svelte'
   import RightSidebar from './lib/RightSidebar.svelte'
