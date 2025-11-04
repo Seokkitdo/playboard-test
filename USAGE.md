@@ -42,7 +42,29 @@ npm install @seokkitdo/playboard@latest
 
 ## 사용 방법
 
-### 기본 사용
+### 1. 스타일 import (필수)
+
+**가장 먼저** CSS 파일을 import 해야 합니다:
+
+```javascript
+// src/main.ts (Vite + Svelte)
+import '@seokkitdo/playboard/styles.css'
+import './app.css'
+import App from './App.svelte'
+
+const app = new App({ target: document.getElementById('app')! })
+export default app
+```
+
+또는 App.svelte에서:
+
+```svelte
+<script>
+  import '@seokkitdo/playboard/styles.css'
+</script>
+```
+
+### 2. 컴포넌트 사용
 
 ```svelte
 <script>
@@ -53,22 +75,19 @@ npm install @seokkitdo/playboard@latest
 <SampleCard title="카드 제목" description="카드 설명" />
 ```
 
-### 스타일 커스터마이징
+### 3. 스타일 커스터마이징 (선택사항)
 
-모든 컴포넌트는 `class` prop을 통해 Tailwind CSS 클래스로 스타일을 커스터마이징할 수 있습니다:
+프로젝트에 Tailwind CSS가 설치되어 있다면, `class` prop으로 커스터마이징할 수 있습니다:
 
 ```svelte
 <script>
   import { SampleButton, SampleCard } from '@seokkitdo/playboard'
 </script>
 
-<!-- 기본 스타일 -->
-<SampleButton label="기본 버튼" />
-
-<!-- 커스텀 스타일 -->
+<!-- 커스텀 스타일 (Tailwind 필요) -->
 <SampleButton
   label="커스텀 버튼"
-  class="!bg-red-500 !hover:bg-red-600"
+  class="!bg-red-500 hover:!bg-red-600"
 />
 
 <SampleCard
@@ -77,8 +96,9 @@ npm install @seokkitdo/playboard@latest
 />
 ```
 
-**주의사항:**
-- 프로젝트에 Tailwind CSS가 설치되어 있어야 합니다
+**주의:**
+- 라이브러리 스타일은 이미 포함되어 있어서 **Tailwind 설치 없이도 작동**합니다
+- Tailwind로 커스터마이징하려면 프로젝트에 Tailwind 설치 필요
 - `!` 접두사로 기본 스타일을 오버라이드할 수 있습니다
 
 ## 사용 가능한 컴포넌트
