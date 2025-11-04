@@ -1,6 +1,6 @@
 {
   "name": "@seokkitdo/playboard",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
